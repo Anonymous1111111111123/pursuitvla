@@ -11,6 +11,7 @@
   <header class="site-header">
     <a class="brand" href="#top" aria-label="PursuitVLA home">PursuitVLA</a>
     <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#demos">Demos</a>
       <a href="#overview">Overview</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
@@ -38,9 +39,47 @@
       <div class="metric"><strong>80%</strong><span>closed-loop outdoor capture</span></div>
     </section>
 
+    <section id="demos" class="section section-demos" aria-labelledby="demos-title">
+      <div class="section-heading">
+        <p class="section-kicker">01 / Real-world demonstrations</p>
+        <h2 id="demos-title">The policy transfers from simulation to outdoor pursuit.</h2>
+        <p class="section-intro">Four closed-loop demonstrations show the current real-world experiment configurations. The videos are presented first so readers can see the deployed behavior before the technical details.</p>
+      </div>
+      <div class="hardware-video-grid" aria-label="Four real-world experiment cases">
+        <figure class="hardware-video">
+          <video class="demo-video" controls playsinline preload="none" poster="assets/figures/case1-first-frame.jpg">
+            <source src="assets/videos/case1.mp4" type="video/mp4">
+            Your browser does not support the embedded video.
+          </video>
+          <figcaption>Case 1 - standard outdoor pursuit.</figcaption>
+        </figure>
+        <figure class="hardware-video">
+          <video class="demo-video" controls playsinline preload="none" poster="assets/figures/case2-first-frame.jpg">
+            <source src="assets/videos/case2.mp4" type="video/mp4">
+            Your browser does not support the embedded video.
+          </video>
+          <figcaption>Case 2 - outdoor pursuit configuration.</figcaption>
+        </figure>
+        <figure class="hardware-video">
+          <video class="demo-video" controls playsinline preload="none" poster="assets/figures/case3-first-frame.jpg">
+            <source src="assets/videos/case3.mp4" type="video/mp4">
+            Your browser does not support the embedded video.
+          </video>
+          <figcaption>Case 3 - outdoor pursuit configuration.</figcaption>
+        </figure>
+        <figure class="hardware-video">
+          <video class="demo-video" controls playsinline preload="none" poster="assets/figures/case4-first-frame.jpg">
+            <source src="assets/videos/case4.mp4" type="video/mp4">
+            Your browser does not support the embedded video.
+          </video>
+          <figcaption>Case 4 - opposite-side start, the most challenging configuration.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="overview" class="section section-overview" aria-labelledby="overview-title">
       <div class="section-heading">
-        <p class="section-kicker">01 / Overview</p>
+        <p class="section-kicker">02 / Overview</p>
         <h2 id="overview-title">Reasoning that remains executable under coordination errors.</h2>
       </div>
       <div class="overview-grid">
@@ -75,7 +114,7 @@
 
     <section id="method" class="section section-method" aria-labelledby="method-title">
       <div class="section-heading">
-        <p class="section-kicker">02 / Method</p>
+        <p class="section-kicker">03 / Method</p>
         <h2 id="method-title">See, think, act - with the next teammate in context.</h2>
         <p class="section-intro">Each decision step is generated autoregressively. The policy reads the current map and agent state, reasons about geometry and interaction, emits a short waypoint plan, and appends that plan before generating the next pursuer decision.</p>
       </div>
@@ -104,7 +143,7 @@
 
     <section id="results" class="section section-results" aria-labelledby="results-title">
       <div class="section-heading">
-        <p class="section-kicker">03 / Results</p>
+        <p class="section-kicker">04 / Results</p>
         <h2 id="results-title">Generalization without map-specific graph reconstruction.</h2>
         <p class="section-intro">The evaluations cover unseen topologies, local obstacle edits, larger pursuer teams, and comparisons against geometric, graph-based, and prompted multimodal baselines.</p>
       </div>
@@ -142,15 +181,11 @@
         <img src="assets/figures/robustness.png" alt="Robustness and coordination comparison across perturbed maps and team sizes.">
         <figcaption>Robustness to local geometry changes, team-size transfer, and component ablations.</figcaption>
       </figure>
-    </section>
-
-    <section class="section section-demos" aria-labelledby="demos-title">
-      <div class="section-heading compact-heading">
-        <p class="section-kicker">04 / Qualitative behavior</p>
-        <h2 id="demos-title">Complementary routes emerge from the same policy.</h2>
-        <p class="section-intro">Pursuers use different free-space routes as the map geometry changes, while the evader is controlled by the same role-conditioned policy.</p>
+      <div class="results-subsection">
+        <h3>Qualitative behavior</h3>
+        <p>Pursuers use different free-space routes as the map geometry changes, while the evader is controlled by the same role-conditioned policy.</p>
       </div>
-      <figure class="wide-figure">
+      <figure class="wide-figure qualitative-figure">
         <img src="assets/figures/trajectory-comparison.png" alt="Qualitative trajectory comparison across pursuit-evasion policies.">
         <figcaption>Representative trajectories under matched initial conditions.</figcaption>
       </figure>
@@ -172,36 +207,6 @@
           <div class="hardware-stat"><strong>10 / 20</strong><span>EPG captures</span></div>
           <div class="hardware-stat"><strong>2 Hz</strong><span>policy update rate</span></div>
         </div>
-      </div>
-      <div class="hardware-video-grid" aria-label="Four real-world experiment cases">
-        <figure class="hardware-video">
-          <video class="demo-video" controls playsinline preload="metadata">
-            <source src="assets/videos/case1.mp4" type="video/mp4">
-            Your browser does not support the embedded video.
-          </video>
-          <figcaption>Case 1 - real-world pursuit demonstration.</figcaption>
-        </figure>
-        <figure class="hardware-video">
-          <video class="demo-video" controls playsinline preload="metadata">
-            <source src="assets/videos/case2.mp4" type="video/mp4">
-            Your browser does not support the embedded video.
-          </video>
-          <figcaption>Case 2 - real-world pursuit demonstration.</figcaption>
-        </figure>
-        <figure class="hardware-video">
-          <video class="demo-video" controls playsinline preload="metadata">
-            <source src="assets/videos/case3.mp4" type="video/mp4">
-            Your browser does not support the embedded video.
-          </video>
-          <figcaption>Case 3 - real-world pursuit demonstration.</figcaption>
-        </figure>
-        <figure class="hardware-video">
-          <video class="demo-video" controls playsinline preload="metadata" poster="assets/figures/case4-first-frame.jpg">
-            <source src="assets/videos/case4.mp4" type="video/mp4">
-            Your browser does not support the embedded video.
-          </video>
-          <figcaption>Case 4 - opposite-side start, the most challenging configuration.</figcaption>
-        </figure>
       </div>
     </section>
 
