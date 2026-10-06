@@ -23,7 +23,8 @@
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-inner">
         <p class="eyebrow">Anonymous project page</p>
-        <h1 id="page-title"><span class="title-accent">PursuitVLA</span>: An Executable Vision-Language-Action Policy for Zero-Shot Generalization in Pursuit-Evasion Games</h1>
+        <h1 id="page-title"><span class="title-accent">PursuitVLA</span>: Vision-Language-Action Pursuit-Evasion</h1>
+        <p class="hero-paper-title">An executable policy for zero-shot generalization in pursuit-evasion games.</p>
         <p class="hero-lede">A unified autoregressive policy that turns visual geometry, strategic reasoning, and teammate-conditioned action generation into executable multi-agent pursuit.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#method">Explore the method</a>
@@ -44,6 +45,7 @@
         <p class="section-kicker">01 / Real-world demonstrations</p>
         <h2 id="demos-title">The policy transfers from simulation to outdoor pursuit.</h2>
         <p class="section-intro">Four closed-loop demonstrations show the current real-world experiment configurations. The videos are presented first so readers can see the deployed behavior before the technical details.</p>
+        <p class="demo-summary"><strong>16/20 captures</strong><span>80% success across four initial configurations</span></p>
       </div>
       <div class="hardware-video-grid" aria-label="Four real-world experiment cases">
         <figure class="hardware-video">
@@ -86,7 +88,7 @@
         <div class="abstract-copy">
           <p>Pursuit-evasion games require pursuers to coordinate over long adversarial interactions and complex map geometry while producing executable actions. PursuitVLA is an autoregressive vision-language-action policy that generates reasoning traces and waypoint tokens directly from top-down observations and multi-agent states.</p>
           <p>Training first uses dynamic-programming demonstrations with strategic reasoning, then applies reinforcement fine-tuning with Sequential Action Compensation (SeqAC). SeqAC scores candidate actions at intermediate states induced by policy-generated teammate prefixes, allowing later pursuers to compensate for earlier deviations.</p>
-          <p>The same role-conditioned policy controls pursuers and evaders. It transfers across unseen maps, remains robust to local geometry changes, scales beyond the 2v1 training setting, and transfers from simulation to a closed-loop outdoor deployment.</p>
+          <p>The same role-conditioned policy controls pursuers and evaders, transfers across unseen maps, remains robust to local geometry changes, scales beyond the 2v1 training setting, and transfers to closed-loop outdoor deployment.</p>
         </div>
         <aside class="callout" aria-label="Research question">
           <p class="callout-label">Research question</p>
@@ -146,6 +148,11 @@
         <p class="section-kicker">04 / Results</p>
         <h2 id="results-title">Generalization without map-specific graph reconstruction.</h2>
         <p class="section-intro">The evaluations cover unseen topologies, local obstacle edits, larger pursuer teams, and comparisons against geometric, graph-based, and prompted multimodal baselines.</p>
+      <div class="results-highlights" aria-label="Key result highlights">
+        <div class="result-highlight"><strong>79.6%</strong><span>unseen-map capture</span></div>
+        <div class="result-highlight"><strong>93.3%</strong><span>perturbed-map capture</span></div>
+        <div class="result-highlight"><strong>80%</strong><span>outdoor capture</span></div>
+      </div>
       </div>
       <div class="result-layout">
         <div class="result-figure-wrap">
